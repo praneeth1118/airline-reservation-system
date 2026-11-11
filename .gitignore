@@ -1,0 +1,21 @@
+# Executables and build outputs
+*.exe
+*.o
+*.obj
+*.out
+
+# IDE and Editor configurations
+.vscode/
+.vs/
+.idea/
+*.suo
+*.user
+
+# Temporary files & Excel lock files
+~$*.xlsx
+*.tmp
+*.log
+
+# Windows specific
+Thumbs.db
+Desktop.ini

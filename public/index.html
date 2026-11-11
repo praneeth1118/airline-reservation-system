@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyWings | Airline Reservation System (C++ Backend)</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Top Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <span class="logo-icon">✈</span>
+        <div class="logo-text">
+          <span class="brand-title">SkyWings</span>
+          <span class="brand-sub">AIRLINE RESERVATION SYSTEM</span>
+        </div>
+      </div>
+      <nav class="nav-menu">
+        <button class="nav-link active" data-tab="flights-tab">Available Flights</button>
+        <button class="nav-link" data-tab="book-tab">Book Ticket</button>
+        <button class="nav-link" data-tab="manifest-tab">Passenger Manifest</button>
+        <button class="nav-link" data-tab="cancel-tab">Cancel Ticket</button>
+        <button class="nav-link" data-tab="classes-tab">Seat Classes (OOP)</button>
+        <button class="nav-link" data-tab="stats-tab">System Overview</button>
+      </nav>
+      <div class="backend-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">Pure C++11 Backend</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-banner">
+    <div class="hero-content">
+      <div class="hero-tag">C++ SEMESTER PROJECT</div>
+      <h1>Global Airline Reservation & Ticketing Engine</h1>
+      <p>A full-fledged flight reservation platform powered by an embedded pure C++ Winsock REST backend with polymorphic seat class inheritance.</p>
+      <div class="hero-stats-row" id="quick-stats-row">
+        <div class="hero-stat-card">
+          <span class="stat-number" id="hero-active-flights">4</span>
+          <span class="stat-label">Scheduled Flights</span>
+        </div>
+        <div class="hero-stat-card">
+          <span class="stat-number" id="hero-total-passengers">--</span>
+          <span class="stat-label">Active Bookings</span>
+        </div>
+        <div class="hero-stat-card">
+          <span class="stat-number" id="hero-total-revenue">$0.00</span>
+          <span class="stat-label">Total Revenue</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Container -->
+  <main class="main-content">
+
+    <!-- TAB 1: AVAILABLE FLIGHTS -->
+    <section id="flights-tab" class="tab-pane active">
+      <div class="section-header">
+        <div>
+          <h2>Available Flight Schedules</h2>
+          <p class="section-desc">Browse real-time flight routes, seat availability, and multi-class fares.</p>
+        </div>
+        <div class="search-box">
+          <input type="text" id="flightSearchInput" placeholder="Search by city, airport code, or flight no..." oninput="filterFlights()">
+          <button class="btn btn-secondary" onclick="loadFlights()">Refresh</button>
+        </div>
+      </div>
+
+      <div class="flights-grid" id="flightsContainer">
+        <!-- Rendered via JavaScript -->
+        <div class="loading-spinner">Loading flights from C++ backend...</div>
+      </div>
+    </section>
+
+    <!-- TAB 2: BOOK TICKET -->
+    <section id="book-tab" class="tab-pane">
+      <div class="section-header">
+        <div>
+          <h2>Book a Flight Ticket</h2>
+          <p class="section-desc">Select your flight, choose your seat class, and confirm passenger information.</p>
+        </div>
+      </div>
+
+      <div class="booking-grid">
+        <div class="booking-form-card">
+          <form id="bookingForm" onsubmit="handleBookingSubmit(event)">
+            <h3 class="form-title">1. Select Flight Route</h3>
+            <div class="form-group">
+              <label for="bookFlightSelect">Flight Number & Route</label>
+              <select id="bookFlightSelect" required onchange="onFlightSelectionChange()">
+                <option value="">-- Choose a Flight --</option>
+              </select>
+            </div>
+
+            <h3 class="form-title" style="margin-top: 1.5rem;">2. Choose Seat Class (Inheritance)</h3>
+            <div class="class-picker-grid">
+              <label class="class-option-card">
+                <input type="radio" name="seatClass" value="Economy" checked onchange="updateFarePreview()">
+                <div class="class-card-body">
+                  <div class="class-badge badge-economy">ECONOMY</div>
+                  <div class="class-title">Economy Class</div>
+                  <div class="class-mult">1.0x Base Fare</div>
+                  <div class="class-luggage">🧳 20 kg Baggage</div>
+                  <div class="class-refund">70% Refundable</div>
+                </div>
+              </label>
+
+              <label class="class-option-card">
+                <input type="radio" name="seatClass" value="Business" onchange="updateFarePreview()">
+                <div class="class-card-body">
+                  <div class="class-badge badge-business">BUSINESS</div>
+                  <div class="class-title">Business Class</div>
+                  <div class="class-mult">2.2x Base Fare</div>
+                  <div class="class-luggage">🧳 40 kg Baggage</div>
+                  <div class="class-refund">85% Refundable</div>
+                </div>
+              </label>
+
+              <label class="class-option-card">
+                <input type="radio" name="seatClass" value="First Class" onchange="updateFarePreview()">
+                <div class="class-card-body">
+                  <div class="class-badge badge-first">FIRST CLASS</div>
+                  <div class="class-title">Royal First Class</div>
+                  <div class="class-mult">3.8x Base Fare</div>
+                  <div class="class-luggage">🧳 60 kg Baggage</div>
+                  <div class="class-refund">100% Refundable</div>
+                </div>
+              </label>
+            </div>
+
+            <h3 class="form-title" style="margin-top: 1.5rem;">3. Passenger Details</h3>
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="passName">Full Legal Name</label>
+                <input type="text" id="passName" placeholder="e.g. Johnathan Doe" required>
+              </div>
+              <div class="form-group">
+                <label for="passPassport">Passport / ID Number</label>
+                <input type="text" id="passPassport" placeholder="e.g. US987654" required>
+              </div>
+            </div>
+
+            <div class="form-row-3">
+              <div class="form-group">
+                <label for="passEmail">Email Address</label>
+                <input type="email" id="passEmail" placeholder="e.g. john@example.com" required>
+              </div>
+              <div class="form-group">
+                <label for="passPhone">Phone Number</label>
+                <input type="tel" id="passPhone" placeholder="e.g. +1 555-0199" required>
+              </div>
+              <div class="form-group">
+                <label for="passAge">Age</label>
+                <input type="number" id="passAge" min="1" max="120" value="28" required>
+              </div>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="passGender">Gender</label>
+                <select id="passGender">
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other / Prefer not to say</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="passSeatReq">Preferred Seat (Optional)</label>
+                <input type="text" id="passSeatReq" placeholder="Leave empty for auto-assignment (e.g. 1A, 3C, 7B)">
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary btn-lg" id="bookSubmitBtn">Confirm & Book Ticket</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Booking Summary & Price Preview Card -->
+        <div class="fare-summary-card">
+          <h3>Booking Summary</h3>
+          <div class="summary-flight-info" id="summaryFlightInfo">
+            <p class="placeholder-text">Please select a flight on the left to view route schedule and live fare calculation.</p>
+          </div>
+
+          <div class="fare-breakdown" id="fareBreakdownSection" style="display: none;">
+            <hr class="summary-divider">
+            <div class="breakdown-row">
+              <span>Base Fare:</span>
+              <span id="summaryBasePrice">$0.00</span>
+            </div>
+            <div class="breakdown-row">
+              <span id="summaryClassLabel">Class Multiplier:</span>
+              <span id="summaryClassMult">1.0x</span>
+            </div>
+            <div class="breakdown-row">
+              <span>Baggage Included:</span>
+              <span id="summaryBaggage">20 kg</span>
+            </div>
+            <div class="breakdown-row">
+              <span>In-Flight Dining:</span>
+              <span id="summaryMeal" class="meal-text">Complimentary Snack</span>
+            </div>
+            <div class="breakdown-row">
+              <span>Airport Lounge:</span>
+              <span id="summaryLounge" class="lounge-text">Not Included</span>
+            </div>
+            <hr class="summary-divider">
+            <div class="breakdown-row total-row">
+              <span>Total Price:</span>
+              <span id="summaryTotalFare" class="total-price">$0.00</span>
+            </div>
+            <div class="polymorphic-note">
+              💡 <strong>C++ OOP in Action:</strong> The fare, baggage, dining perks, and cancellation policy above are calculated dynamically at runtime using <code>SeatClass::calculateFare()</code> via polymorphic virtual method dispatch!
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: PASSENGER MANIFEST -->
+    <section id="manifest-tab" class="tab-pane">
+      <div class="section-header">
+        <div>
+          <h2>Flight Passenger Manifest</h2>
+          <p class="section-desc">View all confirmed passengers onboard a specific flight.</p>
+        </div>
+        <div class="manifest-filter-row">
+          <label for="manifestFlightSelect">Select Flight:</label>
+          <select id="manifestFlightSelect" onchange="loadFlightPassengers()">
+            <!-- Populated via JS -->
+          </select>
+          <button class="btn btn-secondary" onclick="loadFlightPassengers()">Refresh Manifest</button>
+          <a href="/airline_bookings.xlsx" class="btn btn-secondary" download style="text-decoration: none;">📥 Export Excel (.xlsx)</a>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Ticket ID</th>
+              <th>Passenger Name</th>
+              <th>Passport No.</th>
+              <th>Seat Class</th>
+              <th>Seat No.</th>
+              <th>Fare Paid</th>
+              <th>Contact Details</th>
+              <th>Booking Timestamp</th>
+            </tr>
+          </thead>
+          <tbody id="passengerTableBody">
+            <!-- Populated via JS -->
+          </tbody>
+        </table>
+      </div>
+      <div id="manifestEmptyState" class="empty-state" style="display: none;">
+        <span class="empty-icon">👥</span>
+        <h3>No passengers found for this flight</h3>
+        <p>Book a seat for this flight from the booking tab to see it appear here immediately.</p>
+      </div>
+    </section>
+
+    <!-- TAB 4: CANCEL TICKET -->
+    <section id="cancel-tab" class="tab-pane">
+      <div class="section-header">
+        <div>
+          <h2>Manage & Cancel Booking</h2>
+          <p class="section-desc">Look up your booking by Ticket ID to inspect details or process a cancellation with automatic polymorphic refund calculation.</p>
+        </div>
+      </div>
+
+      <div class="cancel-container">
+        <div class="lookup-card">
+          <form onsubmit="handleTicketLookup(event)" class="lookup-form">
+            <div class="form-group flex-1">
+              <label for="lookupTicketId">Enter Ticket Reference ID</label>
+              <input type="text" id="lookupTicketId" placeholder="e.g. TKT-1001" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="align-self: flex-end; height: 48px;">Search Booking</button>
+          </form>
+
+          <div class="quick-tickets">
+            <span class="quick-title">Quick Demo Tickets:</span>
+            <span class="quick-chip" onclick="quickFillTicket('TKT-1001')">TKT-1001 (Aarav - SK101)</span>
+            <span class="quick-chip" onclick="quickFillTicket('TKT-1002')">TKT-1002 (Priya - SK303)</span>
+            <span class="quick-chip" onclick="quickFillTicket('TKT-1003')">TKT-1003 (Rohan - SK404)</span>
+            <span class="quick-chip" onclick="quickFillTicket('TKT-1004')">TKT-1004 (Ananya - Cancelled)</span>
+          </div>
+        </div>
+
+        <div id="ticketResultCard" class="ticket-result-card" style="display: none;">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: SEAT CLASSES & OOP DEMONSTRATION -->
+    <section id="classes-tab" class="tab-pane">
+      <div class="section-header">
+        <div>
+          <h2>Seat Classes & Object-Oriented Design</h2>
+          <p class="section-desc">How Inheritance and Dynamic Polymorphism are implemented in this C++ Airline Reservation System.</p>
+        </div>
+      </div>
+
+      <div class="classes-grid" id="perksContainer">
+        <!-- Rendered via JS from /api/perks -->
+      </div>
+
+      <div class="oop-explainer-card">
+        <h3>🏛️ C++ Object-Oriented Programming Architecture</h3>
+        <p>This project is specifically engineered to demonstrate core OOP principles expected in college end-semester evaluation:</p>
+        
+        <div class="oop-points-grid">
+          <div class="oop-point">
+            <h4>1. Abstract Base Class</h4>
+            <p><code>SeatClass</code> acts as an abstract base class defining pure virtual functions: <code>calculateFare(double)</code>, <code>getMealService()</code>, <code>getLoungeAccess()</code>, and <code>getRefundPercentage()</code>.</p>
+          </div>
+          <div class="oop-point">
+            <h4>2. Derived Class Inheritance</h4>
+            <p><code>EconomySeat</code>, <code>BusinessSeat</code>, and <code>FirstClassSeat</code> inherit from <code>SeatClass</code>, overriding each virtual method with specialized business logic and pricing multipliers (1.0x, 2.2x, 3.8x).</p>
+          </div>
+          <div class="oop-point">
+            <h4>3. Dynamic Polymorphism</h4>
+            <p>The <code>Ticket</code> class holds a polymorphic <code>std::shared_ptr&lt;SeatClass&gt;</code>. Calling <code>ticket.cancelTicket()</code> evaluates the correct class-specific refund (70%, 85%, or 100%) at runtime without switch-cases.</p>
+          </div>
+          <div class="oop-point">
+            <h4>4. Encapsulation & Separation</h4>
+            <p>Flight capacity tracking, seat allocation maps, ticket state machines, and socket I/O are completely decoupled across modular C++ header and source units.</p>
+          </div>
+        </div>
+
+        <div class="code-preview-block">
+          <div class="code-header">
+            <span>C++ Inheritance Hierarchy Snippet</span>
+            <span class="code-lang">C++11</span>
+          </div>
+          <pre><code><span class="kw">class</span> <span class="type">SeatClass</span> {
+<span class="kw">public</span>:
+    <span class="kw">virtual</span> <span class="type">double</span> <span class="fn">calculateFare</span>(<span class="type">double</span> baseFlightPrice) <span class="kw">const</span> = <span class="num">0</span>;
+    <span class="kw">virtual</span> <span class="type">double</span> <span class="fn">getRefundPercentage</span>() <span class="kw">const</span> = <span class="num">0</span>;
+    <span class="kw">virtual</span> <span class="type">int</span> <span class="fn">getBaggageAllowanceKg</span>() <span class="kw">const</span> = <span class="num">0</span>;
+};
+
+<span class="kw">class</span> <span class="type">BusinessSeat</span> : <span class="kw">public</span> <span class="type">SeatClass</span> {
+<span class="kw">public</span>:
+    <span class="type">double</span> <span class="fn">calculateFare</span>(<span class="type">double</span> base) <span class="kw">const</span> <span class="kw">override</span> { <span class="kw">return</span> base * <span class="num">2.2</span>; }
+    <span class="type">double</span> <span class="fn">getRefundPercentage</span>() <span class="kw">const</span> <span class="kw">override</span> { <span class="kw">return</span> <span class="num">0.85</span>; } <span class="comment">// 85% refund</span>
+};</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 6: SYSTEM STATS & ALL BOOKINGS -->
+    <section id="stats-tab" class="tab-pane">
+      <div class="section-header">
+        <div>
+          <h2>System Overview & Live Dashboard</h2>
+          <p class="section-desc">Real-time airline operational metrics computed directly by the C++ backend.</p>
+        </div>
+        <button class="btn btn-danger" onclick="confirmResetSystem()">Reset to Default Demo State</button>
+      </div>
+
+      <div class="stats-dashboard-grid" id="statsGrid">
+        <div class="stat-box">
+          <span class="stat-icon">🛫</span>
+          <div class="stat-val" id="stat-flights">0</div>
+          <div class="stat-name">Active Routes</div>
+        </div>
+        <div class="stat-box">
+          <span class="stat-icon">🎟️</span>
+          <div class="stat-val" id="stat-bookings">0</div>
+          <div class="stat-name">Active Bookings</div>
+        </div>
+        <div class="stat-box">
+          <span class="stat-icon">❌</span>
+          <div class="stat-val" id="stat-cancelled">0</div>
+          <div class="stat-name">Cancelled Tickets</div>
+        </div>
+        <div class="stat-box highlight-stat">
+          <span class="stat-icon">💰</span>
+          <div class="stat-val" id="stat-revenue">$0.00</div>
+          <div class="stat-name">Total Revenue (Retained)</div>
+        </div>
+      </div>
+
+      <div class="class-distribution-card">
+        <h3>Class Booking Distribution</h3>
+        <div class="distribution-bars">
+          <div class="dist-bar-item">
+            <div class="dist-label">
+              <span>Economy Class</span>
+              <span id="dist-econ-count">0 tickets</span>
+            </div>
+            <div class="progress-track"><div id="dist-econ-bar" class="progress-fill fill-economy" style="width: 0%;"></div></div>
+          </div>
+          <div class="dist-bar-item">
+            <div class="dist-label">
+              <span>Business Class</span>
+              <span id="dist-biz-count">0 tickets</span>
+            </div>
+            <div class="progress-track"><div id="dist-biz-bar" class="progress-fill fill-business" style="width: 0%;"></div></div>
+          </div>
+          <div class="dist-bar-item">
+            <div class="dist-label">
+              <span>First Class</span>
+              <span id="dist-first-count">0 tickets</span>
+            </div>
+            <div class="progress-track"><div id="dist-first-bar" class="progress-fill fill-first" style="width: 0%;"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="all-bookings-card" style="margin-top: 2rem;">
+        <div class="section-header" style="margin-bottom: 1rem;">
+          <h3>All Master Bookings (Ledger)</h3>
+          <div>
+            <a href="/airline_bookings.xlsx" class="btn btn-secondary" download style="text-decoration: none; margin-right: 0.5rem;">📥 Export Excel (.xlsx)</a>
+            <button class="btn btn-secondary" onclick="loadAllBookings()">Refresh Ledger</button>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Ticket ID</th>
+                <th>Flight</th>
+                <th>Route</th>
+                <th>Passenger</th>
+                <th>Seat Class</th>
+                <th>Seat</th>
+                <th>Fare</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="allBookingsTableBody">
+              <!-- Populated via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal: Boarding Pass Confirmation -->
+  <div id="boardingPassModal" class="modal-backdrop" style="display: none;">
+    <div class="modal-content">
+      <button class="modal-close-btn" onclick="closeBoardingPassModal()">×</button>
+      
+      <div class="boarding-pass" id="printableBoardingPass">
+        <div class="pass-header">
+          <div class="pass-brand">
+            <span class="pass-icon">✈</span>
+            <div>
+              <h3>SkyWings International</h3>
+              <p>Official Boarding Pass</p>
+            </div>
+          </div>
+          <div class="pass-class-badge" id="modalClassBadge">ECONOMY</div>
+        </div>
+
+        <div class="pass-body">
+          <div class="pass-route-row">
+            <div class="airport-block">
+              <span class="airport-code" id="modalOriginCode">JFK</span>
+              <span class="airport-name" id="modalOriginName">New York</span>
+            </div>
+            <div class="flight-arrow-block">
+              <span class="arrow-plane">✈ ─── ✈</span>
+              <span class="flight-no-badge" id="modalFlightNo">SK-101</span>
+            </div>
+            <div class="airport-block text-right">
+              <span class="airport-code" id="modalDestCode">LHR</span>
+              <span class="airport-name" id="modalDestName">London</span>
+            </div>
+          </div>
+
+          <div class="pass-details-grid">
+            <div class="pass-detail-item">
+              <span class="detail-label">PASSENGER NAME</span>
+              <span class="detail-val" id="modalPassengerName">John Doe</span>
+            </div>
+            <div class="pass-detail-item">
+              <span class="detail-label">TICKET REFERENCE</span>
+              <span class="detail-val mono" id="modalTicketId">TKT-1001</span>
+            </div>
+            <div class="pass-detail-item">
+              <span class="detail-label">SEAT NUMBER</span>
+              <span class="detail-val seat-highlight" id="modalSeatNumber">12A</span>
+            </div>
+            <div class="pass-detail-item">
+              <span class="detail-label">DEPARTURE TIME</span>
+              <span class="detail-val" id="modalDepartureTime">08:30 AM</span>
+            </div>
+            <div class="pass-detail-item">
+              <span class="detail-label">BAGGAGE ALLOWANCE</span>
+              <span class="detail-val" id="modalBaggage">20 kg</span>
+            </div>
+            <div class="pass-detail-item">
+              <span class="detail-label">TOTAL FARE PAID</span>
+              <span class="detail-val fare-highlight" id="modalFarePaid">$480.00</span>
+            </div>
+          </div>
+
+          <div class="pass-footer">
+            <div class="barcode-box">
+              <div class="barcode-lines">||| | |||| | ||| || |||||| | ||| | || |||| | |||</div>
+              <span class="barcode-sub" id="modalBarcodeText">E-TICKET VERIFIED</span>
+            </div>
+            <div class="pass-dining-info">
+              <span class="dining-label">Dining Service:</span>
+              <span id="modalMealService">Complimentary Snack</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn-secondary" onclick="window.print()">🖨️ Print Boarding Pass</button>
+        <button class="btn btn-primary" onclick="closeBoardingPassModal()">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toastNotification" class="toast"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p><strong>Airline Reservation System</strong> — C++ End-Semester Project</p>
+      <p class="footer-sub">Engineered with C++11, Windows Sockets (Winsock2), OOP Polymorphism & Modern Web UI</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

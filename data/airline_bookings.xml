@@ -1,0 +1,332 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Center"/>
+   <Font ss:FontName="Calibri" ss:Size="11"/>
+  </Style>
+  <Style ss:ID="Header">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Calibri" ss:Size="11" ss:Color="#FFFFFF" ss:Bold="1"/>
+   <Interior ss:Color="#1F497D" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="DataLeft">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Center"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D9D9D9"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D9D9D9"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D9D9D9"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D9D9D9"/>
+   </Borders>
+  </Style>
+  <Style ss:ID="DataCenter">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D9D9D9"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D9D9D9"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D9D9D9"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D9D9D9"/>
+   </Borders>
+  </Style>
+  <Style ss:ID="DataRight">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Center"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D9D9D9"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D9D9D9"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D9D9D9"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D9D9D9"/>
+   </Borders>
+  </Style>
+  <Style ss:ID="CancelledLeft">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Center"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D9D9D9"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D9D9D9"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D9D9D9"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D9D9D9"/>
+   </Borders>
+   <Font ss:FontName="Calibri" ss:Size="11" ss:Color="#9C0006"/>
+   <Interior ss:Color="#FFC7CE" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="CancelledCenter">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D9D9D9"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D9D9D9"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D9D9D9"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D9D9D9"/>
+   </Borders>
+   <Font ss:FontName="Calibri" ss:Size="11" ss:Color="#9C0006"/>
+   <Interior ss:Color="#FFC7CE" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="CancelledRight">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Center"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D9D9D9"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D9D9D9"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D9D9D9"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#D9D9D9"/>
+   </Borders>
+   <Font ss:FontName="Calibri" ss:Size="11" ss:Color="#9C0006"/>
+   <Interior ss:Color="#FFC7CE" ss:Pattern="Solid"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Booking Details">
+  <Table>
+   <Column ss:Width="110"/>
+   <Column ss:Width="95"/>
+   <Column ss:Width="150"/>
+   <Column ss:Width="160"/>
+   <Column ss:Width="160"/>
+   <Column ss:Width="160"/>
+   <Column ss:Width="110"/>
+   <Column ss:Width="95"/>
+   <Column ss:Width="110"/>
+   <Column ss:Width="120"/>
+   <Column ss:Width="140"/>
+   <Column ss:Width="110"/>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Ticket ID</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Flight ID</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Airline</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Origin</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Destination</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Passenger Name</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Seat Class</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Seat Number</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Fare Paid ($)</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Refund Amount ($)</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Booking Date</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Status</Data></Cell>
+   </Row>
+   <Row ss:Height="19">
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">TKT-1001</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">SK101</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">SkyWings India</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">Hyderabad (HYD)</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">Delhi (DEL)</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">Aarav Sharma</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">Economy</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">7A</Data></Cell>
+    <Cell ss:StyleID="DataRight"><Data ss:Type="Number">480.00</Data></Cell>
+    <Cell ss:StyleID="DataRight"><Data ss:Type="Number">0.00</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">2026-11-10 10:30</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">CONFIRMED</Data></Cell>
+   </Row>
+   <Row ss:Height="19">
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">TKT-1002</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">SK303</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">SkyWings India</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">Chennai (MAA)</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">Bengaluru (BLR)</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">Priya Patel</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">Economy</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">7A</Data></Cell>
+    <Cell ss:StyleID="DataRight"><Data ss:Type="Number">180.00</Data></Cell>
+    <Cell ss:StyleID="DataRight"><Data ss:Type="Number">0.00</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">2026-11-10 10:30</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">CONFIRMED</Data></Cell>
+   </Row>
+   <Row ss:Height="19">
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">TKT-1003</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">SK404</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">SkyWings India</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">Delhi (DEL)</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">Kolkata (CCU)</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">Rohan Iyer</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">Economy</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">7A</Data></Cell>
+    <Cell ss:StyleID="DataRight"><Data ss:Type="Number">290.00</Data></Cell>
+    <Cell ss:StyleID="DataRight"><Data ss:Type="Number">0.00</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">2026-11-10 10:30</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">CONFIRMED</Data></Cell>
+   </Row>
+   <Row ss:Height="19">
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">TKT-1004</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">SK202</Data></Cell>
+    <Cell ss:StyleID="CancelledLeft"><Data ss:Type="String">SkyWings India</Data></Cell>
+    <Cell ss:StyleID="CancelledLeft"><Data ss:Type="String">Hyderabad (HYD)</Data></Cell>
+    <Cell ss:StyleID="CancelledLeft"><Data ss:Type="String">Mumbai (BOM)</Data></Cell>
+    <Cell ss:StyleID="CancelledLeft"><Data ss:Type="String">Ananya Reddy</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">Business</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">3A</Data></Cell>
+    <Cell ss:StyleID="CancelledRight"><Data ss:Type="Number">770.00</Data></Cell>
+    <Cell ss:StyleID="CancelledRight"><Data ss:Type="Number">654.50</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">2026-11-10 10:30</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">CANCELLED</Data></Cell>
+   </Row>
+   <Row ss:Height="19">
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">TKT-1005</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">SK101</Data></Cell>
+    <Cell ss:StyleID="CancelledLeft"><Data ss:Type="String">SkyWings India</Data></Cell>
+    <Cell ss:StyleID="CancelledLeft"><Data ss:Type="String">Hyderabad (HYD)</Data></Cell>
+    <Cell ss:StyleID="CancelledLeft"><Data ss:Type="String">Delhi (DEL)</Data></Cell>
+    <Cell ss:StyleID="CancelledLeft"><Data ss:Type="String">Vikram Verma</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">First Class</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">1A</Data></Cell>
+    <Cell ss:StyleID="CancelledRight"><Data ss:Type="Number">1824.00</Data></Cell>
+    <Cell ss:StyleID="CancelledRight"><Data ss:Type="Number">1824.00</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">2026-11-10 10:30</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">CANCELLED</Data></Cell>
+   </Row>
+   <Row ss:Height="19">
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">TKT-1006</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">SK101</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">SkyWings India</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">Hyderabad (HYD)</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">Delhi (DEL)</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">Dheeraj</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">First Class</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">1A</Data></Cell>
+    <Cell ss:StyleID="DataRight"><Data ss:Type="Number">1824.00</Data></Cell>
+    <Cell ss:StyleID="DataRight"><Data ss:Type="Number">0.00</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">2026-11-11 13:38</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">CONFIRMED</Data></Cell>
+   </Row>
+   <Row ss:Height="19">
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">TKT-1007</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">SK101</Data></Cell>
+    <Cell ss:StyleID="CancelledLeft"><Data ss:Type="String">SkyWings India</Data></Cell>
+    <Cell ss:StyleID="CancelledLeft"><Data ss:Type="String">Hyderabad (HYD)</Data></Cell>
+    <Cell ss:StyleID="CancelledLeft"><Data ss:Type="String">Delhi (DEL)</Data></Cell>
+    <Cell ss:StyleID="CancelledLeft"><Data ss:Type="String">Aditi Rao</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">Business</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">3A</Data></Cell>
+    <Cell ss:StyleID="CancelledRight"><Data ss:Type="Number">1056.00</Data></Cell>
+    <Cell ss:StyleID="CancelledRight"><Data ss:Type="Number">897.60</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">2026-11-11 14:30</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">CANCELLED</Data></Cell>
+   </Row>
+  </Table>
+ </Worksheet>
+ <Worksheet ss:Name="Passenger List">
+  <Table>
+   <Column ss:Width="150"/>
+   <Column ss:Width="160"/>
+   <Column ss:Width="65"/>
+   <Column ss:Width="80"/>
+   <Column ss:Width="190"/>
+   <Column ss:Width="135"/>
+   <Column ss:Width="120"/>
+   <Column ss:Width="95"/>
+   <Column ss:Width="95"/>
+   <Column ss:Width="110"/>
+   <Column ss:Width="110"/>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Passenger ID / Ticket ID</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Passenger Name</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Age</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Gender</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Email</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Phone Number</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Passport Number</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Flight ID</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Seat Number</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Seat Class</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Booking Status</Data></Cell>
+   </Row>
+   <Row ss:Height="19">
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">TKT-1001</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">Aarav Sharma</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="Number">29</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">Male</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">aarav.sharma@gmail.com</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">+91 98765 43210</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">J8234109</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">SK101</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">7A</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">Economy</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">CONFIRMED</Data></Cell>
+   </Row>
+   <Row ss:Height="19">
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">TKT-1002</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">Priya Patel</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">Female</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">priya.patel@gmail.com</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">+91 94401 23456</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">M4591023</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">SK303</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">7A</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">Economy</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">CONFIRMED</Data></Cell>
+   </Row>
+   <Row ss:Height="19">
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">TKT-1003</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">Rohan Iyer</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="Number">34</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">Male</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">rohan.iyer@gmail.com</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">+91 81234 56789</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">K7612349</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">SK404</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">7A</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">Economy</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">CONFIRMED</Data></Cell>
+   </Row>
+   <Row ss:Height="19">
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">TKT-1004</Data></Cell>
+    <Cell ss:StyleID="CancelledLeft"><Data ss:Type="String">Ananya Reddy</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="Number">31</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">Female</Data></Cell>
+    <Cell ss:StyleID="CancelledLeft"><Data ss:Type="String">ananya.reddy@gmail.com</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">+91 98230 11223</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">P3198421</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">SK202</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">3A</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">Business</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">CANCELLED</Data></Cell>
+   </Row>
+   <Row ss:Height="19">
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">TKT-1005</Data></Cell>
+    <Cell ss:StyleID="CancelledLeft"><Data ss:Type="String">Vikram Verma</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="Number">42</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">Male</Data></Cell>
+    <Cell ss:StyleID="CancelledLeft"><Data ss:Type="String">vikram.verma@gmail.com</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">+91 97112 34567</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">R9081234</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">SK101</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">1A</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">First Class</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">CANCELLED</Data></Cell>
+   </Row>
+   <Row ss:Height="19">
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">TKT-1006</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">Dheeraj</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">Male</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">dheeraj@gmail.com</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">+91 382483462</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">AP24009</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">SK101</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">1A</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">First Class</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">CONFIRMED</Data></Cell>
+   </Row>
+   <Row ss:Height="19">
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">TKT-1007</Data></Cell>
+    <Cell ss:StyleID="CancelledLeft"><Data ss:Type="String">Aditi Rao</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="Number">29</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">Female</Data></Cell>
+    <Cell ss:StyleID="CancelledLeft"><Data ss:Type="String">aditi.rao@example.com</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">+91 98112 34567</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">Z9876543</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">SK101</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">3A</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">Business</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">CANCELLED</Data></Cell>
+   </Row>
+  </Table>
+ </Worksheet>
+</Workbook>
