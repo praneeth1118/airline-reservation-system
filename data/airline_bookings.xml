@@ -125,18 +125,18 @@
     <Cell ss:StyleID="DataCenter"><Data ss:Type="String">CONFIRMED</Data></Cell>
    </Row>
    <Row ss:Height="19">
-    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">TKT-1002</Data></Cell>
-    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">SK303</Data></Cell>
-    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">SkyWings India</Data></Cell>
-    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">Chennai (MAA)</Data></Cell>
-    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">Bengaluru (BLR)</Data></Cell>
-    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">Priya Patel</Data></Cell>
-    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">Economy</Data></Cell>
-    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">7A</Data></Cell>
-    <Cell ss:StyleID="DataRight"><Data ss:Type="Number">180.00</Data></Cell>
-    <Cell ss:StyleID="DataRight"><Data ss:Type="Number">0.00</Data></Cell>
-    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">2026-11-10 10:30</Data></Cell>
-    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">CONFIRMED</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">TKT-1002</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">SK303</Data></Cell>
+    <Cell ss:StyleID="CancelledLeft"><Data ss:Type="String">SkyWings India</Data></Cell>
+    <Cell ss:StyleID="CancelledLeft"><Data ss:Type="String">Chennai (MAA)</Data></Cell>
+    <Cell ss:StyleID="CancelledLeft"><Data ss:Type="String">Bengaluru (BLR)</Data></Cell>
+    <Cell ss:StyleID="CancelledLeft"><Data ss:Type="String">Priya Patel</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">Economy</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">7A</Data></Cell>
+    <Cell ss:StyleID="CancelledRight"><Data ss:Type="Number">180.00</Data></Cell>
+    <Cell ss:StyleID="CancelledRight"><Data ss:Type="Number">126.00</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">2026-11-10 10:30</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">CANCELLED</Data></Cell>
    </Row>
    <Row ss:Height="19">
     <Cell ss:StyleID="DataCenter"><Data ss:Type="String">TKT-1003</Data></Cell>
@@ -208,6 +208,20 @@
     <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">2026-11-11 14:30</Data></Cell>
     <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">CANCELLED</Data></Cell>
    </Row>
+   <Row ss:Height="19">
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">TKT-1008</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">SK202</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">SkyWings India</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">Hyderabad (HYD)</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">Mumbai (BOM)</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">Ram Gopal</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">Economy</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">7A</Data></Cell>
+    <Cell ss:StyleID="DataRight"><Data ss:Type="Number">350.00</Data></Cell>
+    <Cell ss:StyleID="DataRight"><Data ss:Type="Number">0.00</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">2026-11-11 15:24</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">CONFIRMED</Data></Cell>
+   </Row>
   </Table>
  </Worksheet>
  <Worksheet ss:Name="Passenger List">
@@ -250,17 +264,17 @@
     <Cell ss:StyleID="DataCenter"><Data ss:Type="String">CONFIRMED</Data></Cell>
    </Row>
    <Row ss:Height="19">
-    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">TKT-1002</Data></Cell>
-    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">Priya Patel</Data></Cell>
-    <Cell ss:StyleID="DataCenter"><Data ss:Type="Number">27</Data></Cell>
-    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">Female</Data></Cell>
-    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">priya.patel@gmail.com</Data></Cell>
-    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">+91 94401 23456</Data></Cell>
-    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">M4591023</Data></Cell>
-    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">SK303</Data></Cell>
-    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">7A</Data></Cell>
-    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">Economy</Data></Cell>
-    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">CONFIRMED</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">TKT-1002</Data></Cell>
+    <Cell ss:StyleID="CancelledLeft"><Data ss:Type="String">Priya Patel</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">Female</Data></Cell>
+    <Cell ss:StyleID="CancelledLeft"><Data ss:Type="String">priya.patel@gmail.com</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">+91 94401 23456</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">M4591023</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">SK303</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">7A</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">Economy</Data></Cell>
+    <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">CANCELLED</Data></Cell>
    </Row>
    <Row ss:Height="19">
     <Cell ss:StyleID="DataCenter"><Data ss:Type="String">TKT-1003</Data></Cell>
@@ -326,6 +340,19 @@
     <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">3A</Data></Cell>
     <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">Business</Data></Cell>
     <Cell ss:StyleID="CancelledCenter"><Data ss:Type="String">CANCELLED</Data></Cell>
+   </Row>
+   <Row ss:Height="19">
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">TKT-1008</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">Ram Gopal</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="Number">20</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">Male</Data></Cell>
+    <Cell ss:StyleID="DataLeft"><Data ss:Type="String">ramgopal@gmail.com</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">+91 8300894323</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">IN200040</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">SK202</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">7A</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">Economy</Data></Cell>
+    <Cell ss:StyleID="DataCenter"><Data ss:Type="String">CONFIRMED</Data></Cell>
    </Row>
   </Table>
  </Worksheet>

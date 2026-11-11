@@ -539,15 +539,18 @@ async function loadSystemStats() {
     const stats = await res.json();
 
     // Hero stats
-    document.getElementById('hero-active-flights').textContent = stats.totalFlights;
-    document.getElementById('hero-total-passengers').textContent = stats.activeBookings;
-    document.getElementById('hero-total-revenue').textContent = `$${stats.totalRevenue.toFixed(2)}`;
+    const heroFlights = document.getElementById('hero-active-flights');
+    if (heroFlights) heroFlights.textContent = stats.totalFlights;
+    const heroPassengers = document.getElementById('hero-total-passengers');
+    if (heroPassengers) heroPassengers.textContent = stats.activeBookings;
 
     // Dashboard boxes
-    document.getElementById('stat-flights').textContent = stats.totalFlights;
-    document.getElementById('stat-bookings').textContent = stats.activeBookings;
-    document.getElementById('stat-cancelled').textContent = stats.cancelledBookings;
-    document.getElementById('stat-revenue').textContent = `$${stats.totalRevenue.toFixed(2)}`;
+    const statFlights = document.getElementById('stat-flights');
+    if (statFlights) statFlights.textContent = stats.totalFlights;
+    const statBookings = document.getElementById('stat-bookings');
+    if (statBookings) statBookings.textContent = stats.activeBookings;
+    const statCancelled = document.getElementById('stat-cancelled');
+    if (statCancelled) statCancelled.textContent = stats.cancelledBookings;
 
     // Distribution progress bars
     const totalBookings = stats.economyCount + stats.businessCount + stats.firstClassCount || 1;

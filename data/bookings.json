@@ -32,9 +32,9 @@
     "seatClass": "Economy",
     "seatNumber": "7A",
     "farePaid": 180.00,
-    "refundAmount": 0.00,
+    "refundAmount": 126.00,
     "bookingDate": "2026-11-10 10:30",
-    "status": "CONFIRMED"
+    "status": "CANCELLED"
   }  {
     "ticketId": "TKT-1003",
     "flightNumber": "SK404",
@@ -125,5 +125,23 @@
     "refundAmount": 897.60,
     "bookingDate": "2026-11-11 14:30",
     "status": "CANCELLED"
+  }  {
+    "ticketId": "TKT-1008",
+    "flightNumber": "SK202",
+    "airlineName": "SkyWings India",
+    "origin": "Hyderabad (HYD)",
+    "destination": "Mumbai (BOM)",
+    "passengerName": "Ram Gopal",
+    "email": "ramgopal@gmail.com",
+    "phone": "+91 8300894323",
+    "passport": "IN200040",
+    "age": 20,
+    "gender": "Male",
+    "seatClass": "Economy",
+    "seatNumber": "7A",
+    "farePaid": 350.00,
+    "refundAmount": 0.00,
+    "bookingDate": "2026-11-11 15:24",
+    "status": "CONFIRMED"
   }
 ]
